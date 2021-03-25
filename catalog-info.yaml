@@ -4,9 +4,9 @@ metadata:
   name: infra-docs
   description: Infrastructure Documentation
   annotations:
-    github.com/project-slug: digirati-co-uk/iiif-docs
+    github.com/project-slug: digirati-co-uk/infra-docs
     jira/project-key: BFI
-    backstage.io/techdocs-ref: url:https://github.com/digirati-co-uk/iiif-docs
+    backstage.io/techdocs-ref: url:https://github.com/digirati-co-uk/infra-docs
   tags:
     - infrastructure
     - security
