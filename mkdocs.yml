@@ -2,3 +2,6 @@ site_name: Infrastructure Documentation
 nav:
   - Home: index.md
   - Yubikey Usage: yubikey.md
+
+plugins:
+  - techdocs-core
