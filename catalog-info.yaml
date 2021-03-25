@@ -13,4 +13,5 @@ metadata:
 spec:
   type: documentation
   lifecycle: development
+  owner: garyttierney
   domain: internal
