@@ -12,4 +12,5 @@ metadata:
     - security
 spec:
   type: documentation
+  lifecycle: development
   domain: internal
