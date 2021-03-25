@@ -1,7 +1,8 @@
 site_name: Infrastructure Documentation
 nav:
   - Home: index.md
-  - Yubikey Usage: yubikey.md
+  - Guide:
+      Yubikey: yubikey.md
 
 plugins:
   - techdocs-core
