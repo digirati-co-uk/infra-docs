@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: infra-docs
+  description: Infrastructure Documentation
+  annotations:
+    github.com/project-slug: digirati-co-uk/iiif-docs
+    jira/project-key: BFI
+    backstage.io/techdocs-ref: url:https://github.com/digirati-co-uk/iiif-docs
+  tags:
+    - infrastructure
+    - security
+spec:
+  type: documentation
+  domain: internal
