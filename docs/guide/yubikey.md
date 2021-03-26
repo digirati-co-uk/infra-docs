@@ -47,7 +47,7 @@ Yubico has a [video](https://www.yubico.com/why-yubico/for-individuals/gmail-for
 LastPass supports OTP and TOTP as a two factor method and does not
 support U2F.
 
-1. Go to your [LastPass account details](https://)
+1. Go to your [LastPass account details](https://lastpass.com/)
 2. Click `Two-step verification` and you may be prompted for your password.
 3. Click `Enable MFA` and follow the on-screen instructions. When prompted, touch the Yubikey to generate a one-time password.
 
