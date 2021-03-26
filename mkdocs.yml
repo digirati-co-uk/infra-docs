@@ -1,8 +1,12 @@
 site_name: Infrastructure Documentation
+
+theme:
+  name: mkdocs
+
+
 nav:
   - Home: index.md
-  - Guide:
-      - Yubikey Usage: guide/yubikey.md
-
+  - User Guides:
+      - 01. Using your Yubikey: guide/yubikey.md
 plugins:
   - techdocs-core
