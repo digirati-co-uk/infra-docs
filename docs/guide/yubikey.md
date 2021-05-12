@@ -1,5 +1,7 @@
 # Using your Yubikey
 
+## What can it be used for?
+
 The Yubikey that the company provides employees with is known as a **hardware security token**.
 It functions as a portable security processor and is able to handle storage of cryptographic secrets.
 In short, this means it can be used in place of a personal device for storage of MFA secrets and crypto keys.
@@ -35,9 +37,9 @@ The Yubikey device can also act as an OpenPGP card. It can store encryption and 
 Yubikeys can be used to login to Linux, Windows or Mac operating
 systems.
 
-# Setup guides
+## Setup guides
 
-## Yubikey Best Practice
+### Yubikey Best Practice
 
 The Yubikey is a very useful tool, but one big draw back is that by default once it's plugged into your machine it can be used
 by software while your machine is unattended. This is prevented by certain protocols such as FIDO/U2F, however, to ensure that
@@ -50,7 +52,7 @@ This option must be configured on the Yubikey itself, and can be set using the Y
 1. `ykman openpgp touch aut on`
 1. `ykman openpgp touch sig on`
 
-## Multi-factor Authentication
+### Multi-factor Authentication
 
 Most services that offer support for MFA currently use a TOTP based approach to authentication.
 This is not the preferred mechanism, instead FIDO/U2F should be used when available.
@@ -59,7 +61,7 @@ A user can tell the difference by checking how their Yubikey is enrolled into MF
 - If there's a QR code or anything to import into the Yubikey, it's TOTP
 - If the Yubikey is enrolled into the service, it's FIDO/U2F
 
-### GitHub
+#### GitHub
 
 1. Go to your [GitHub Security Settings](https://github.com/settings/security)
 2. Turn on `Two-factor Authentication` if it's not already enabled. You will
@@ -73,7 +75,7 @@ A user can tell the difference by checking how their Yubikey is enrolled into MF
 
 Yubico has more [detailed instructions](https://www.yubico.com/support/knowledge-base/categories/articles/use-Yubikey-github/).
 
-### Google
+#### Google
 
 1. Go to your [Google Sign-in & Security page](https://myaccount.google.com/security)
 2. Click `Two-step verification` and you may be prompted for your password.
@@ -82,7 +84,7 @@ Yubico has more [detailed instructions](https://www.yubico.com/support/knowledge
 
 Yubico has a [video](https://www.yubico.com/why-yubico/for-individuals/gmail-for-individuals/)
 
-### LastPass
+#### LastPass
 
 LastPass supports OTP and TOTP as a two factor method and does not
 support U2F.
@@ -93,9 +95,9 @@ support U2F.
 
 Yubico has a [video](https://www.yubico.com/gb/works-with-Yubikey/catalog/lastpass-premium-and-families/).
 
-### Other
+#### Other
 
-#### Using the Yubico Authenticator
+##### Using the Yubico Authenticator
 
 To configure multi-factor authentication with a service that only supports TOTP: Download Yubico Authenticator, then File > Add.
 
@@ -110,7 +112,7 @@ Click Scan a QR code if a QR code is visible on the screen or manually enter the
  - Algorithm: usually SHA-1, but can be SHA-256
  - Require touch: enable
 
-## Securely exchanging secrets
+### Securely exchanging secrets
 
 Besides MFA the main function of the Yubikey is providing easy access to encryption/decryption/signing.
 The Yubikey facilitates this by supporting OpenPGP on the device and this extends to making OpenPGP authentication keys available for use in SSH.
@@ -120,12 +122,12 @@ Unfortunately, there is no GUI friendly way to set this up as of today. Assistan
 
 Once GPG has been configured it is important that you distribute your public key among the company so others can send encrypted data to you when needed. This can be done by uploading the public key from the process above into the #devops-chapter Slack channel.
 
-## SSH authentication
+### SSH authentication
 
 Using a Yubikey for SSH authentication relies on it being already set up for GPG use with an Authentication sub-key as in the guide above.
 OpenSSH and PuTTY are supported out of the box by GPG, however, they need a line of configuration to enable the option.
 
-### Windows:
+#### Windows:
 
 Open the Klepoatra configuration folder and edit the gpg-agent.conf file, update it to include:
 
@@ -133,7 +135,7 @@ Open the Klepoatra configuration folder and edit the gpg-agent.conf file, update
 enable-putty-support
 ```
 
-### Linux
+#### Linux
 
 Similarly to Windows, open ~/.gnupg/gpg-agent.conf and update it to include:
 
@@ -142,3 +144,7 @@ enable-ssh-support
 ```
 
 `gpg-connect-agent /bye` can be run to start a new GPG agent and OpenSSH/PuTTY should begin using this straight away.
+
+### Windows Home
+
+Setting up Windows login with your Yubikey is as simple as installing this program from the [App Store](https://www.microsoft.com/en-us/p/yubikey-for-windows-hello/9nblggh511m5)
