@@ -122,6 +122,20 @@ Unfortunately, there is no GUI friendly way to set this up as of today. Assistan
 
 Once GPG has been configured it is important that you distribute your public key among the company so others can send encrypted data to you when needed. This can be done by uploading the public key from the process above into the #devops-chapter Slack channel.
 
+#### Encrypted e-mail
+
+Windows users will find a new option available to sign or encrypt an e-mail in Outlook provided by Kleopatra.
+Using these options will prompt for the Yubikey when sending the e-mail and authenticate/protect the contents of the e-mail with the users cryptographic keys.
+
+![gpg4ol](https://files.intevation.de/users/aheinecke/wkd-en.gif)
+
+Support for Linux e-mail clients varies greatly depending on the client, however, the command-line can be used to decrypt/encrypt reliably:
+
+```
+$ > gpg --decrypt encrypted-email.txt.gpg
+$ > gpg --encrypt email.txt --recipient daniel.grant@digirati.com
+```
+
 ### SSH authentication
 
 Using a Yubikey for SSH authentication relies on it being already set up for GPG use with an Authentication sub-key as in the guide above.
